@@ -282,7 +282,7 @@ if __name__ == '__main__':
     t = threading.Thread(target=detect_motion,args=(net,CLASSES,frameDict,))
     t.daemon = True
     t.start()
-    app.run(host="128.199.20.246", port=8000, debug=True,threaded=True, use_reloader=False)
+    app.run(host="128.199.20.246", port=8001, debug=True,threaded=True, use_reloader=False)
 	# start the flask app
 	# app.run(host=args["ip"], port=args["port"], debug=True,
 	# 	threaded=True, use_reloader=False)
