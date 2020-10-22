@@ -1,0 +1,202 @@
+<html>
+  <style>#plan{
+    width:800px;
+    height:70px;
+    background-color:#f6f6f6;
+    background: -webkit-linear-gradient(left, #efefef, #e6e6e6);
+  background: -moz-linear-gradient(left, #efefef, #e6e6e6);
+  background: -ms-linear-gradient(left, #efefef, #e6e6e6);
+  background: -o-linear-gradient(left, #efefef, #e6e6e6);
+    margin: 5px 40px 5px 70px;
+  margin-top: 35px;
+    
+    
+    
+  }
+  
+  .title{
+    width:100px;
+    height:70px;
+    background-color: #a3a3a3;
+    float:left;
+     -webkit-transition: background-color 0.3s ease-out 0.3s, width 0.3s ease-out 0.3s;
+      -moz-transition:background-color width 0.3s ease-out 0.3s, width 0.3s ease-out 0.3s;
+      -o-transition: background-color width 0.3s ease-out 0.3s, width 0.3s ease-out 0.3s;
+      transition: background-color width 0.3s ease-out 0.3s, width 0.3s ease-out 0.3s;
+    
+  }
+  
+  .title h1{
+    
+    color:white;
+    font-family:'Open Sans';
+    text-transform:uppercase;
+    font-size:10px;
+    font-weight: 20;
+    text-align:center;
+    margin:0px;
+    padding:0px;
+    padding-top:23px;
+  }
+  
+  .title h1 span{
+    font-size:10px;
+  }
+  
+  .title p{
+    color:white;
+    font-family:'Open Sans';
+    text-transform:uppercase;
+    font-size:15px;
+    font-weight:bold;
+    text-align:center;
+    margin:0px;
+    padding:0px;
+    
+  }
+  
+  .title:hover{
+    background-color:#238dad;
+    width:200px;
+    -webkit-transition: background-color 0.3s ease-out 0.3s, width 0.3s ease-out 0.3s;
+      -moz-transition:background-color width 0.3s ease-out 0.3s, width 0.3s ease-out 0.3s;
+      -o-transition: background-color width 0.3s ease-out 0.3s, width 0.3s ease-out 0.3s;
+      transition: background-color width 0.3s ease-out 0.3s, width 0.3s ease-out 0.3s;
+  }
+  
+  
+  .containDetails{
+    max-width: 640px;
+    float:left;
+    margin-top: 0px;
+    padding-left: 46px;
+  }
+  
+  .details li{
+    display:inline-block;
+    margin:0px;
+    padding:0px;
+    font-size: 20px;
+    color: #6a6a6a;
+    font-family:'Open Sans';
+    font-weight:bold;
+    text-align: center;
+    padding-left: 48px;
+
+  }
+  
+  .first{
+    padding:0px!important;
+  }
+  
+  .details{
+    padding:0px;
+    float:left;
+  }
+  .details li span{
+    font-size:15px;
+    text-transform:uppercase;
+  }
+  
+  .details li span:before{
+   content: '\a' ; 
+   white-space: pre;  
+  }
+  
+  .select{
+    margin-top: 73px;
+    margin-left: 14px;
+  }
+  .end{
+    width: 150px;
+    height: 100px;
+    background-color: #efefef;  
+    float: left;
+    position: relative;
+    left: 64px;
+   
+  }
+  
+
+  .inline-block {
+    display: inline-block;
+ }
+ p.ex1 {
+  padding-left: 50px;
+}
+.container{
+  width: 79%;
+  }
+  </style>
+  <head>
+  <!-- <meta http-equiv="refresh" content="5" > -->
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.0/jquery.min.js"></script>
+  <script type="text/javascript">
+  var auto_refresh = setInterval(
+  function () {
+      $('#here').load(' #here');
+      $('#here1').load(' #here1');
+  }, 1000);
+  </script>
+</head>
+
+  <body>
+    
+    <div class="container">
+    
+    <div id="banner" >
+    <div class="inline-block">
+    <!-- <iframe width="620" height="300"
+src="https://www.youtube.com/embed/tgbNymZ7vqY">
+</iframe> -->
+<iframe width=900  height=600  allow="camera; microphone; fullscreen; display-capture" src="https://meet.gokulmc.com/rpi"></iframe>
+</div>
+<div class="inline-block"> 
+      <img width=600  height=600  src="{{ url_for('video_feed') }}"  title="Rpi collage "  >
+   
+  </div>
+  </div>
+
+
+
+    <div id="plan">
+      <div class="title">
+        <h1> <span></span></h1>
+        <p>No. of faces</p>
+    
+      </div>
+
+    <div class="containDetails" >
+    <ul class="details">
+  
+      {% for count,rpiname,hand in a_zip %}
+      <li class="first" id="here" >{{count}}<span>{{rpiname}}</span></li>
+      
+
+    </ul>
+      </div>
+    
+    </div>
+
+    <p>
+    <div id="plan">
+      <div class="title">
+        <h1> <span></span></h1>
+        <p>Gesture detected</p>
+    
+      </div>
+    <div class="containDetails">
+      <ul class="details">
+      <li class="first" id="here1">{{hand}}<span>{{rpiname}}</span></li>
+      {% endfor %}
+    </ul>
+      </div>
+
+    </p>
+  
+    </div>
+    
+  </div>
+
+  </body>
+</html>
