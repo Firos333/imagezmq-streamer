@@ -29,6 +29,7 @@ and can get results.
 KeyWords:
 
 #ImageZmq  <br />
+#Flask <br />
 #Opencv  <br />
 #mobile net DNN for Object detection
 #Haar-cascade face and hand detection <br />
