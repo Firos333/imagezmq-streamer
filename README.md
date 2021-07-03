@@ -1,5 +1,7 @@
 # imagezmq-streamer 
 Live video streaming over network with OpenCV and ImageZMQ
+live streaming of Raspberry devices using imagezmq and flask to a HTML page
+
 
 
 
@@ -8,6 +10,7 @@ Live video streaming over network with OpenCV and ImageZMQ
 ![](https://img.shields.io/badge/Mobilenet-DNN-yellowgreen)
 ![](https://img.shields.io/badge/OpenCV-Computer%20Vision-red)
 ![](https://img.shields.io/badge/Haar--Cascade-face%20and%20Hand%20detection-green)
+![](https://img.shields.io/badge/Flask-Backend-orange)
 
 
 Description:  <br />
